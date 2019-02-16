@@ -8,30 +8,31 @@ public class No4344 {
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
-		int c = sc.nextInt(); // 케이스의 갯수
+		int c = sc.nextInt(); // 케이스의 갯수, c
 		sc.nextLine();
-		double sum = 0;
-		double aver = 0;
-		int count = 0;
 		double[][] arr = new double[c][1000];
 		
 		for (int i = 0; i < c; i++) { // c만큼
-			for (int arri = 0; arri < sc.nextInt(); arri++) {
+			double sum = 0; //합
+			double avg = 0;  // 평균
+			int num = sc.nextInt(); // 케이스의 학생수
+			for (int arri = 0; arri < num; arri++) {
 				arr[i][arri] = sc.nextDouble(); // 배열
 				sum += arr[i][arri]; // 배열합
 			}
-			aver = sum / (arr[i].length-1); // 배열평균
-			for (int j = 0; j < arr[i].length-1; j++) {
-				if (arr[i][j] > aver)
-					count += 1;
+			avg = sum / num; // 배열평균
+			int count = 0;
+			for (int j = 0; j < num; j++) {
+				if (arr[i][j] > avg)
+					count++;
 			}
-			double answer = count / ((double)arr[i].length-1) * 100;
-			arr[i][arr[i].length] = answer;
+			double answer = count / num * 100;
 			sc.nextLine();
+			
+			System.out.format("%.3f%n", answer);
+			System.out.println("%");
 		}
 		
-		for(int a=0; a<c; a++)
-		System.out.format("%.3f%n", arr[a][arr[a].length]);
 		sc.close();
 	}
 
