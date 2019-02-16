@@ -13,17 +13,18 @@ public class No1110 {
 		int count = 0;
 		int x = input;
 
-		while (result != input) {
+		while (true) {
 			int ten = x / 10; // 10의 자리
 			int one = x % 10; // 1의 자리
 			int sum = ten + one;
 			int sumone = sum % 10;
 			result = one * 10 + sumone;
-
-			if (result != input)
-				x = result;
-
+			x = result;
 			count += 1;
+
+			if (result == input)
+				break;
+
 		}
 
 		System.out.println(count);
