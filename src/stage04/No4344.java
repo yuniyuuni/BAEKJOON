@@ -26,11 +26,12 @@ public class No4344 {
 				if (arr[i][j] > avg)
 					count++;
 			}
-			double answer = count / num * 100;
+			double answer = (double)count / num * 100;  // int/int = 0으로 되므로 형변환해야함 (내가 0.000나온이유)
 			sc.nextLine();
 			
-			System.out.format("%.3f%n", answer);
-			System.out.println("%");
+			System.out.printf("%.3f%%\n", answer);  //%% -> %
+			//System.out.println("%");
+
 		}
 		
 		sc.close();
