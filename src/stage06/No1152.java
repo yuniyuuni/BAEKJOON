@@ -23,3 +23,6 @@ public class No1152 {
 	}
 
 }
+
+// StringTokenizer st = new StringTokenizer(str," ");
+// System.out.println(st.countTokens()); Èñ¿ø¾¾
